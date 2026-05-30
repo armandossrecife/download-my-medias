@@ -5,7 +5,7 @@ Aplicação de download de arquivos públicos da Internet
 ## Dependências
 
 ```bash
-pip install yt-dlp requests
+uv pip install yt-dlp requests
 ```
 
 ## Execução
