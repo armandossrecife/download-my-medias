@@ -798,7 +798,7 @@ fh = RotatingFileHandler(
 
 ---
 
-## 11. Testes e Qualidade
+## 11. Testes e Qualidade (TO DO)
 
 ### 11.1 Estratégia de Testes Sugerida
 
