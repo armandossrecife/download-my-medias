@@ -154,7 +154,6 @@ download-my-medias/
 ├── 📁 logs/                   # [Gerado em runtime] Arquivos de log por sessão
 ├── 📁 videos/                 # [Gerado em runtime] Downloads de vídeo (yt-dlp)
 ├── 📁 arquivos/               # [Gerado em runtime] Downloads genéricos (requests)
-└── 📁 __MACOSX/              # [Metadados macOS] Ignorar/remover
 ```
 
 ### 3.2 Responsabilidades por Módulo
