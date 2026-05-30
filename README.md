@@ -13,3 +13,7 @@ uv pip install yt-dlp requests
 ```bash
 uv run main.py
 ```
+
+## Extra
+
+Para um projeto de download de arquivos públicos mais elaborado veja o projeto [Media-Downloader](https://github.com/mhogomchungu/media-downloader)
