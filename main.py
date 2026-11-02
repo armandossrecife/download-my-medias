@@ -19,12 +19,40 @@ from gui import MainWindow
 
 # ==================== PONTO DE ENTRADA ====================
 
+import sys
+import os
+
+def definir_icone(janela, caminho_icone):
+    """Define o ícone da janela de forma compatível com todos os SOs"""
+    
+    if not os.path.exists(caminho_icone):
+        print(f"⚠️  Aviso: Arquivo '{caminho_icone}' não encontrado!")
+        return
+    
+    # Detecta o sistema operacional
+    if sys.platform.startswith('win'):
+        # Windows
+        janela.iconbitmap(default=os.path.abspath(caminho_icone))
+    else:
+        # Linux ou macOS - precisa converter para PhotoImage
+        try:
+            from PIL import Image, ImageTk
+            img = Image.open(caminho_icone.replace('.ico', '.png'))
+            photo = ImageTk.PhotoImage(img)
+            janela.iconphoto(True, photo)
+            janela._icon = photo  # Mantém referência
+        except ImportError:
+            print("⚠️  Instale Pillow: pip install Pillow")
+
+
 def main():
     root = tk.Tk()
     
     # Configuração de ícone cross-platform
     try:
-        root.iconbitmap(default='')
+        #root.iconbitmap(default='downloader.ico')
+        #root.iconbitmap('downloader1.ico')
+        definir_icone(root, 'downloader.png')
     except tk.TclError:
         try:
             empty_icon = tk.PhotoImage(width=1, height=1)
